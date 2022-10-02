@@ -31,12 +31,12 @@ main{
 
 #calculator{
     background-color: var(--calculator);
-    width: 400px;
+    width: 360px;
     padding: 20px;
 
-
-    border-radius: 15px;
     border: 2px solid;
+    border-radius: 15px;
+    
     
 }
 
@@ -46,19 +46,22 @@ main{
     border-radius: 5px;
     background-color: var(--screen);
 
-    margin-bottom: 20px;
+    padding: 10px 20px;
+    text-align: right;
 
+    margin-bottom: 20px;
 }
 
 
 .screen-last{
     min-height: 32px;
-    text-align: right;
+    font-size: 20px;
+    
 
 }
 .screen-current{
     min-height: 64px;
-    text-align: right;
+    font-size: 40px;
 }
 
 
@@ -75,12 +78,16 @@ main{
 .btn{
     padding: 20px;
     border-radius: 5px;
-    height: 80px;
     border: 2px var(--border) solid;
+    font-size: 20px;
 }
 
 .btn:hover{
     background-color: var(--btn-Hover);
+}
+
+.btn:active{
+    background-color: violet;
 }
 .span-2{
     grid-column: span 2;
