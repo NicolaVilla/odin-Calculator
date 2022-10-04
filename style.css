@@ -7,8 +7,9 @@
     --btn: #9fa8da;
     --btn-Hover: #e0e0e0;
     --btn-Active: #bdbdbd;
-
-    --footer-background: #001970
+    --stripes: #c5cae9;
+    --footer-background: #001970;
+    --footer-text: white;
 }
 body{
     background-color: var(--background);
@@ -24,11 +25,7 @@ body{
     width: 100%;
 
     background-color: var(--footer-background);
-    color: white;
-    font-size: 100px;
-    font-style: italic;
-    text-align: center;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    color: var(--stripes);
 
 
     display: flex;
@@ -41,10 +38,26 @@ body{
     top: 0;
     
 
-    border-bottom: 5px white solid;
+    border-bottom: 5px var(--stripes) solid;
 
 }
 
+.header-text{
+
+    background-color: #9fa8da;
+    border: 1px white solid;
+    border-radius: 5px;
+    color: white;
+
+
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
+    padding: 5px;
+
+}
 
 #myVideo {
     position: fixed;
@@ -154,7 +167,7 @@ main{
     height: 100px;
     
     background-color: var(--footer-background);
-    color: white;
+    color: var(--stripes);
     
 
     display: flex;
@@ -165,7 +178,7 @@ main{
     bottom: 0;
     width: 100%;
 
-    border-top: 5px white solid;
+    border-top: 5px var(--stripes) solid;
 }
 
 
@@ -174,7 +187,7 @@ main{
     border: 1px white solid;
     border-radius: 5px;
     padding: 15px;
-
+    color: var(--footer-text) ;
     font-size: 20px;
     text-align: center;
     
