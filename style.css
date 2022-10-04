@@ -2,19 +2,47 @@
 :root{
     --background: #eeeeee;
     --calculator: #aaa;
-    --screen: #e1f5fe;
+    --screen: #4a148c;
     --border: #212121;
-    --btn: #eeeeee;
+    --btn: #9fa8da;
     --btn-Hover: #e0e0e0;
     --btn-Active: #bdbdbd;
 
-    --footer-background: #320b86
+    --footer-background: #001970
 }
 body{
     background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+
+
+.header{
+    height: 100px;
+    width: 100%;
+
+    background-color: var(--footer-background);
+    color: white;
+    font-size: 100px;
+    font-style: italic;
+    text-align: center;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+
+    left: 0;
+    top: 0;
+    
+
+    border-bottom: 5px white solid;
+
 }
 
 
@@ -51,6 +79,7 @@ main{
     border: 2px solid;
     border-radius: 15px;
     margin-right: 50%;
+    margin-top: 5%;
     
 }
 
@@ -64,6 +93,9 @@ main{
     text-align: right;
 
     margin-bottom: 20px;
+
+    color: white;
+    text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
 }
 
 
@@ -92,11 +124,16 @@ main{
 
 
 .btn{
+    background-color: var(--btn);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 2px var(--border) solid;
     font-size: 20px;
     opacity: 1;
+
+    color: white;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
 }
 
 .btn:hover{
@@ -118,8 +155,7 @@ main{
     
     background-color: var(--footer-background);
     color: white;
-    font-size: 20px;
-    text-align: center;
+    
 
     display: flex;
     justify-content: center;
@@ -130,4 +166,17 @@ main{
     width: 100%;
 
     border-top: 5px white solid;
+}
+
+
+.footer-text{
+    background-color: #9fa8da;
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 15px;
+
+    font-size: 20px;
+    text-align: center;
+    
+
 }
