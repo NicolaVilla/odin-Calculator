@@ -7,18 +7,31 @@
     --btn: #eeeeee;
     --btn-Hover: #e0e0e0;
     --btn-Active: #bdbdbd;
+
+    --footer-background: #320b86
 }
 body{
     background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
-
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+}
 
 
 
 main{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     
@@ -31,13 +44,13 @@ main{
 
 
 #calculator{
-    background-color: var(--calculator);
+    background: rgba(54, 25, 25, .5);
     width: 360px;
     padding: 20px;
 
     border: 2px solid;
     border-radius: 15px;
-    
+    margin-right: 50%;
     
 }
 
@@ -52,6 +65,8 @@ main{
 
     margin-bottom: 20px;
 }
+
+
 
 
 .screen-last{
@@ -81,6 +96,7 @@ main{
     border-radius: 5px;
     border: 2px var(--border) solid;
     font-size: 20px;
+    opacity: 1;
 }
 
 .btn:hover{
@@ -92,4 +108,26 @@ main{
 }
 .span-2{
     grid-column: span 2;
+}
+
+
+
+
+.footer{
+    height: 100px;
+    
+    background-color: var(--footer-background);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    border-top: 5px white solid;
 }

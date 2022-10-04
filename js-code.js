@@ -95,6 +95,7 @@ function deleteLastNumber(){
     resultScreen.textContent = resultScreen.textContent.slice(0,-1)
     if(resultScreen.textContent!="") return
     resultScreen.textContent = "0"
+    shouldClearScreen = true
 }
 
 
