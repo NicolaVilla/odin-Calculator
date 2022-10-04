@@ -8,6 +8,9 @@ let firstNumber = 0
 let secondNumber = 0
 
 
+///Flag to known if last number can be removed from the screen
+let isDeleteable = false
+
 const numberBtn = document.querySelectorAll('[data-number]')
 const operatorBtn = document.querySelectorAll('[data-operator]')
 const clearBtn = document.getElementById('clearBtn')
@@ -21,7 +24,7 @@ const resultScreen = document.getElementById('resultScreen')
 
 
 
-///
+///NUMERAL BUTTONS
 numberBtn.forEach((button) =>
     button.addEventListener('click', () => appendNumber(button.textContent))
 )
@@ -29,9 +32,10 @@ numberBtn.forEach((button) =>
 function appendNumber(number){
     if(shouldClearScreen) clearResultScreen()
     resultScreen.textContent += number
+    isDeleteable = true
 }
 
-///
+///OPERATOR BUTTONS
 operatorBtn.forEach((button) => 
     button.addEventListener('click', () => addOperator(button.textContent))
 )
@@ -49,6 +53,7 @@ function addOperator(operator){
     else{
         lastResult= operate(firstOperator,lastResult,parseInt(resultScreen.textContent))
         resultScreen.textContent = lastResult
+        isDeleteable = false
         
         firstOperator = operator
         operationScreen.textContent = lastResult + " " + operator
@@ -59,20 +64,58 @@ function addOperator(operator){
 
 
 
-///
+///EQUAL BUTTON
 equalBtn.addEventListener('click', equal)
 
 function equal(){
     firstNumber = lastResult
     secondNumber = parseInt(resultScreen.textContent)
     lastResult= operate(firstOperator,firstNumber,secondNumber)
+
     resultScreen.textContent = lastResult
+    isDeleteable =  false
 
     operationScreen.textContent = firstNumber + " " + firstOperator + " " + secondNumber + " = "
     
     shouldClearScreen = true
     firstOperator = ""
 }
+
+
+
+
+
+///DELETE BUTTON
+
+deleteBtn.addEventListener('click' , deleteLastNumber)
+
+function deleteLastNumber(){
+    
+    if(!isDeleteable) return
+    resultScreen.textContent = resultScreen.textContent.slice(0,-1)
+    if(resultScreen.textContent!="") return
+    resultScreen.textContent = "0"
+}
+
+
+///CLEAR BUTTON
+
+clearBtn.addEventListener('click' , resetCalculatorValues)
+
+function resetCalculatorValues(){
+    firstOperator = ""
+    secondOperator = ""
+    lastResult =
+    firstNumber = 0
+    secondNumber = 0
+
+    resultScreen.textContent = "0"
+    operationScreen.textContent = ""
+    shouldClearScreen = true
+}
+
+
+
 
 
 function clearResultScreen(){
@@ -106,7 +149,7 @@ function operate(operator, a,b){
         case "-":
             return subtract(a,b)
         case "*":
-            returnmultiply(a,b)
+            return multiply(a,b)
         case "/":
             if(b===0) return "UnU"
             else return divide(a,b)
